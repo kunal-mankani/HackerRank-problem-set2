@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector <string> catAndMouse(int x, int y, int z) {
+    // Complete this function
+    vector<string> vec;
+    if(abs(x-z)==abs(y-z))
+        vec.push_back("Mouse C");
+    else if(abs(x-z)>abs(y-z))
+        vec.push_back("Cat B");
+    else
+        vec.push_back("Cat A");
+    
+    return vec;
+    
+}
+
+int main() {
+    int q;
+    cin >> q;
+    for(int a0 = 0; a0 < q; a0++){
+        int x;
+        int y;
+        int z;
+        cin >> x >> y >> z;
+        vector <string> result = catAndMouse(x, y, z);
+        for (ssize_t i = 0; i < result.size(); i++) {
+            cout << result[i] << (i != result.size() - 1 ? " " : "");
+        }
+        cout << endl;
+
+
+    }
+    return 0;
+}
