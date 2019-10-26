@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>/*https://www.hackerrank.com/challenges/counting-valleys/problem*/
+
+using namespace std;
+
+int countingValleys(int n, string s) {
+    // Complete this function
+    
+    //cout<<s[0];
+    //cout<<endl<<s[n-1];//as soon as I encounter move=-1 and keep on checking out the value of move, until it gets to zero , that gives me a valley
+
+   int level=0;
+   int vally=0;
+
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='D')
+        {
+            level--;
+        }
+        else
+        {
+            level++;
+          	if(level == 0)
+              vally++;
+        }
+        
+    }
+    
+    return vally;
+    
+}
+
+int main() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    int result = countingValleys(n, s);
+    cout << result << endl;
+    return 0;
+}
